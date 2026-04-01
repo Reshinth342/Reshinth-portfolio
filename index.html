@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reshinth's portfolio — B.Tech IT student from Tamil Nadu blending web development, cybersecurity, and graphic design into creative, animated experiences." />
+  <title>Reshinth • Story Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23facc15'/%3E%3Ctext x='50' y='68' font-family='Inter,sans-serif' font-size='60' font-weight='800' text-anchor='middle' fill='%23020617'%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-brand">R</div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <p class="loader-text">Loading portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Optional ambient sound -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="audio/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Blurry background blobs -->
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+
+  <!-- Top navigation -->
+  <header class="top-nav">
+    <div class="brand">
+      <span class="brand-mark">R</span>
+      <span class="brand-text">reshinth • portfolio</span>
+    </div>
+    <div class="top-right">
+      <nav id="mainNav">
+        <button class="nav-link active" data-target="#prologue">Home</button>
+        <button class="nav-link" data-target="#who">About</button>
+        <button class="nav-link" data-target="#learn">Skills</button>
+        <button class="nav-link" data-target="#work">Projects</button>
+        <button class="nav-link" data-target="#gallery">Gallery</button>
+        <button class="nav-link" data-target="#contact">Contact</button>
+      </nav>
+      <button class="sound-toggle" id="soundToggle">Sound: Off</button>
+      <button class="theme-toggle" id="themeToggle">Dark</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Bottom progress bar -->
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <!-- Little boat / character -->
+  <div id="boatCharacter" class="character"></div>
+
+  <!-- Back to top button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- Page content -->
+  <main class="story">
+
+    <!-- Section 1: Hero -->
+    <section id="prologue" class="chapter hero-section">
+      <!-- Hero background image -->
+      <div class="hero-bg-image"></div>
+      <div class="chapter-body">
+        <div class="chapter-main">
+          <p class="eyebrow reveal">PORTFOLIO • STORY MODE</p>
+          <div class="greeting-pill reveal" id="greetingPill"></div>
+
+          <div class="hero-intro reveal">
+            <div class="profile-avatar">
+              <img src="images/about-illustration.png" alt="Reshinth profile" />
+              <div class="avatar-status"></div>
+            </div>
+            <div class="hero-intro-text">
+              <h1>
+                Hi, I'm <span class="accent">Reshinth</span> —
+                <span class="soft">I turn ideas into visuals: from code to posters, websites to invitations.</span>
+              </h1>
+            </div>
+          </div>
+
+          <p class="lead reveal">
+            B.Tech IT student from Tamil Nadu, blending web development, cybersecurity, and graphic design.
+            This site showcases my journey: part portfolio, part creative experiment in smooth,
+            animated storytelling and eye-catching designs.
+          </p>
+
+          <div class="hero-actions reveal">
+            <button class="primary-btn" data-target="#work">
+              View my projects
+            </button>
+            <button class="ghost-btn" data-target="#who">
+              Scroll to know me
+            </button>
+          </div>
+
+          <div class="hero-tags reveal">
+            <span class="pill">VS Code Enjoyer</span>
+            <span class="pill">Beginner → Better</span>
+            <span class="pill">Cybersecurity Curious</span>
+            <span class="pill">Design Enthusiast</span>
+          </div>
+        </div>
+
+        <div class="hero-side reveal">
+          <div class="hero-card">
+            <p class="hero-label">Current status</p>
+            <p class="hero-value">B.Tech IT • Learner</p>
+            <p class="hero-label">Focus areas</p>
+            <p class="hero-value">Web • Cybersecurity • Graphic Design</p>
+            <p class="hero-label">This site</p>
+            <p class="hero-value">Built with HTML, CSS & JS only</p>
+            <div class="hero-card-links">
+              <a href="https://github.com/Reshinth342" target="_blank" rel="noopener" class="hero-card-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/reshinth-m" target="_blank" rel="noopener" class="hero-card-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Section divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 2: About -->
+    <section id="who" class="chapter alt">
+      <div class="chapter-body">
+        <div class="chapter-header">
+          <p class="section-tag reveal">Chapter I</p>
+          <h2 class="reveal">Who I am behind the screen</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-content">
+            <div class="two-col">
+              <div class="col reveal">
+                <p>
+                  I'm a <strong>B.Tech IT</strong> student who likes to understand how things actually
+                  work — not just copy-paste code. I enjoy that moment when a broken layout or bug
+                  finally makes sense.
+                </p>
+                <p>
+                  Right now I'm a beginner, but I'm serious about improving. I use simple tools:
+                  VS Code, a browser, and lots of small experiments like this website.
+                </p>
+              </div>
+              <div class="col reveal">
+                <p>
+                  I'm especially drawn to <strong>cybersecurity</strong>: hacking, forensics, digital
+                  defense. I like the idea of thinking like both attacker and defender, then building
+                  safer systems.
+                </p>
+                <p>
+                  This portfolio is my proof-of-work: a place to show I care about
+                  <strong>details, motion, and user experience</strong> — not just plain text pages.
+                </p>
+              </div>
+            </div>
+
+            <div class="linkedin-cta reveal">
+              <a href="https://www.linkedin.com/in/reshinth-m" target="_blank" rel="noopener" class="linkedin-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                Connect with me on LinkedIn
+                <span class="linkedin-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-visual reveal">
+            <div class="about-image-wrapper">
+              <img src="images/about-illustration.png" alt="Developer workspace illustration" class="about-img" />
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row reveal">
+          <div class="meta-item">
+            <span class="meta-label">Based in</span>
+            <span class="meta-value">Tamil Nadu, India</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Goal</span>
+            <span class="meta-value">Cybersecurity / Web Engineering</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Current level</span>
+            <span class="meta-value">Beginner, but improving daily</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 3: Skills -->
+    <section id="learn" class="chapter">
+      <div class="chapter-body">
+        <div class="chapter-header">
+          <p class="section-tag reveal">Chapter II</p>
+          <h2 class="reveal">What I'm building my foundation on</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">💻</span>
+            </div>
+            <h3>Web Basics</h3>
+            <p>
+              HTML for structure, CSS for layout and aesthetics, and JavaScript
+              for interactions like scroll animations and dynamic effects.
+            </p>
+            <p class="skill-details">
+              I've built responsive websites, implemented smooth animations, and learned about web accessibility and performance optimization.
+            </p>
+            <div class="skill-level" data-level="70">
+              <div class="skill-level-track">
+                <div class="skill-level-bar"></div>
+              </div>
+              <span class="skill-level-label">Foundation: 70%</span>
+            </div>
+            <div class="skill-pills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">🔒</span>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>
+              Learning the mindset behind attacks and defenses. Interested in
+              ethical hacking, secure coding, and digital forensics.
+            </p>
+            <p class="skill-details">
+              Studied basic encryption, network security, and ethical hacking principles. Exploring tools like Wireshark and learning about secure coding practices.
+            </p>
+            <div class="skill-level" data-level="55">
+              <div class="skill-level-track">
+                <div class="skill-level-bar"></div>
+              </div>
+              <span class="skill-level-label">Early learner: 55%</span>
+            </div>
+            <div class="skill-pills">
+              <span>Ethical Hacking (learning)</span>
+              <span>Security basics</span>
+              <span>Encryption</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">🎨</span>
+            </div>
+            <h3>Graphic Design</h3>
+            <p>
+              Creating posters, invitations, and visual content for events and college projects.
+              Using tools like Canva, Photoshop, or similar for eye-catching designs.
+            </p>
+            <p class="skill-details">
+              Created over 20 designs including posters, invitations, banners, and social media graphics. Focused on branding, typography, and visual storytelling.
+            </p>
+            <div class="skill-level" data-level="75">
+              <div class="skill-level-track">
+                <div class="skill-level-bar"></div>
+              </div>
+              <span class="skill-level-label">Design Skills: 75%</span>
+            </div>
+            <div class="skill-pills">
+              <span>Posters</span>
+              <span>Invitations</span>
+              <span>Event Graphics</span>
+              <span>Branding</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 4: Projects -->
+    <section id="work" class="chapter alt">
+      <div class="chapter-body">
+        <div class="chapter-header">
+          <p class="section-tag reveal">Chapter III</p>
+          <h2 class="reveal">Projects I've Created</h2>
+        </div>
+
+        <div class="projects-grid reveal">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/project-posters.png" alt="College Posters preview" />
+            </div>
+            <div class="project-content">
+              <h3>College Posters</h3>
+              <p>Eye-catching posters for college events — from cultural fests to tech talks.</p>
+              <ul class="project-features">
+                <li>Vibrant color palettes & bold typography</li>
+                <li>Print-ready & digital formats</li>
+                <li>Consistent branding across events</li>
+              </ul>
+              <p class="project-meta">Canva, Photoshop</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/project-invitations.png" alt="Guest Invitations preview" />
+            </div>
+            <div class="project-content">
+              <h3>Guest Invitations</h3>
+              <p>Elegant invitation designs for college guests, seminars, and workshops.</p>
+              <ul class="project-features">
+                <li>Custom themes for each occasion</li>
+                <li>Digital & printable versions</li>
+                <li>Professional, polished layouts</li>
+              </ul>
+              <p class="project-meta">Illustrator, Canva</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image project-image-gradient" style="background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);">
+              <div class="project-image-overlay">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Event Banners</h3>
+              <p>Large-format banners for sports meets, cultural nights, and conferences.</p>
+              <ul class="project-features">
+                <li>High-resolution, print-optimized</li>
+                <li>Dynamic compositions & layouts</li>
+                <li>Designed for large displays</li>
+              </ul>
+              <p class="project-meta">Photoshop, GIMP</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/project-brochures.png" alt="Brochures &amp; Flyers preview" />
+            </div>
+            <div class="project-content">
+              <h3>Brochures &amp; Flyers</h3>
+              <p>Informational brochures for departments, clubs, and recruitment drives.</p>
+              <ul class="project-features">
+                <li>Clean, readable layouts</li>
+                <li>Professional content hierarchy</li>
+                <li>Multi-page design flow</li>
+              </ul>
+              <p class="project-meta">InDesign, Canva</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image project-image-gradient" style="background: linear-gradient(135deg, #f472b6, #fb923c, #facc15);">
+              <div class="project-image-overlay">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Social Media Graphics</h3>
+              <p>Scroll-stopping content for Instagram, Facebook, and college pages.</p>
+              <ul class="project-features">
+                <li>Platform-optimized dimensions</li>
+                <li>Engaging visual storytelling</li>
+                <li>Consistent brand identity</li>
+              </ul>
+              <p class="project-meta">Canva, Adobe Spark</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image project-image-gradient" style="background: linear-gradient(135deg, #34d399, #38bdf8, #818cf8);">
+              <div class="project-image-overlay">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Logo Designs</h3>
+              <p>Versatile logos for college clubs, events, and personal projects.</p>
+              <ul class="project-features">
+                <li>Minimalist to illustrative styles</li>
+                <li>Scalable vector formats</li>
+                <li>Brand identity exploration</li>
+              </ul>
+              <p class="project-meta">Illustrator, Inkscape</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="explore-github reveal">
+          <a href="https://github.com/Reshinth342" target="_blank" rel="noopener" class="explore-github-link">
+            Explore my work on GitHub →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 4.5: Design Gallery -->
+    <section id="gallery" class="chapter alt">
+      <div class="chapter-body">
+        <div class="chapter-header">
+          <p class="section-tag reveal">Gallery</p>
+          <h2 class="reveal">Visual Creations</h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('images/project-posters.png');"></div>
+            <p class="gallery-caption">College Event Poster</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('images/project-invitations.png');"></div>
+            <p class="gallery-caption">Guest Invitation Design</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('images/project-brochures.png');"></div>
+            <p class="gallery-caption">Brochure & Flyer Layout</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" style="background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);"></div>
+            <p class="gallery-caption">Banner for Tech Talk</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('images/hero-bg.png');"></div>
+            <p class="gallery-caption">Abstract Tech Visual</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" style="background: linear-gradient(135deg, #f472b6, #fb923c, #facc15);"></div>
+            <p class="gallery-caption">Social Media Graphic</p>
+          </div>
+        </div>
+
+        <div class="note-box reveal">
+          <p>
+            My full collection includes 20+ designs across posters, invitations,
+            banners, logos, and more. Each piece is crafted with attention to detail and visual impact.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 5: Let's Connect -->
+    <section id="contact" class="chapter">
+      <div class="chapter-body">
+        <div class="chapter-header">
+          <p class="section-tag reveal">Let's Connect</p>
+          <h2 class="reveal">I'd love to hear from you</h2>
+          <p class="connect-subtitle reveal">
+            I'm always open to discussing new opportunities, ideas, or collaborations.
+            If you have something interesting — let's talk.
+          </p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions reveal">
+          <p class="quick-actions-label">Quick reach out:</p>
+          <div class="quick-btns">
+            <button class="quick-btn" data-response="Great! Please reach out via email at Reshinthm7@gmail.com — I'd love to discuss the role and how I can contribute.">
+              💼 I want to hire you
+            </button>
+            <button class="quick-btn" data-response="Awesome! I'm always excited to collaborate. Drop me a message at Reshinthm7@gmail.com with your idea!">
+              🤝 Let's collaborate
+            </button>
+            <button class="quick-btn" data-response="I'm actively looking for internship opportunities! Let's connect on LinkedIn to discuss.">
+              🎯 Internship opportunity
+            </button>
+            <button class="quick-btn" data-response="Hey! Thanks for stopping by — always great to connect with new people. 👋">
+              👋 Just saying hi
+            </button>
+          </div>
+        </div>
+
+        <!-- Chat-style message area -->
+        <div class="connect-chat reveal" id="connectChat">
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble bot">
+              <span class="chat-avatar">R</span>
+              <div class="chat-text">Hey there! Pick a quick option above, or type your own message below. I'll get back to you soon!</div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Type a quick message..." autocomplete="off" />
+            <button class="chat-send-btn" id="chatSendBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Email CTA -->
+        <div class="email-cta reveal">
+          <p>Reach me directly at: <a href="mailto:Reshinthm7@gmail.com" class="email-highlight">Reshinthm7@gmail.com</a></p>
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="connect-cards reveal">
+          <a href="mailto:Reshinthm7@gmail.com" class="connect-card" id="connectEmail">
+            <div class="connect-card-icon">📧</div>
+            <div class="connect-card-info">
+              <span class="connect-card-label">Email</span>
+              <span class="connect-card-value">Reshinthm7@gmail.com</span>
+            </div>
+            <span class="connect-card-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/reshinth-m" target="_blank" rel="noopener" class="connect-card" id="connectLinkedIn">
+            <div class="connect-card-icon">💼</div>
+            <div class="connect-card-info">
+              <span class="connect-card-label">LinkedIn</span>
+              <span class="connect-card-value">linkedin.com/in/reshinth-m</span>
+            </div>
+            <span class="connect-card-arrow">→</span>
+          </a>
+          <a href="https://github.com/Reshinth342" target="_blank" rel="noopener" class="connect-card" id="connectGitHub">
+            <div class="connect-card-icon">🐙</div>
+            <div class="connect-card-info">
+              <span class="connect-card-label">GitHub</span>
+              <span class="connect-card-value">github.com/Reshinth342</span>
+            </div>
+            <span class="connect-card-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="connect-closing reveal">
+          <p>Still learning, still building 🚀</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">R</span>
+        <div class="footer-brand-text">
+          <span class="footer-name">Reshinth</span>
+          <span class="footer-tagline">Web Developer • Designer • Cybersecurity Enthusiast</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-link-group">
+          <span class="footer-link-title">Navigation</span>
+          <button class="footer-nav-link" data-target="#prologue">Home</button>
+          <button class="footer-nav-link" data-target="#who">About</button>
+          <button class="footer-nav-link" data-target="#learn">Skills</button>
+          <button class="footer-nav-link" data-target="#work">Projects</button>
+        </div>
+        <div class="footer-link-group">
+          <span class="footer-link-title">Connect</span>
+          <a href="mailto:Reshinthm7@gmail.com" class="footer-ext-link">Email</a>
+          <a href="https://www.linkedin.com/in/reshinth-m" target="_blank" rel="noopener" class="footer-ext-link">LinkedIn</a>
+          <a href="https://github.com/Reshinth342" target="_blank" rel="noopener" class="footer-ext-link">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-socials">
+        <a href="mailto:Reshinthm7@gmail.com" class="footer-social-link" aria-label="Email">📧</a>
+        <a href="https://www.linkedin.com/in/reshinth-m" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">💼</a>
+        <a href="https://github.com/Reshinth342" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub">🐙</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Reshinth. All rights reserved.</p>
+        <p class="footer-personal">Built with passion and continuous learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cursorRing" class="cursor-ring"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
