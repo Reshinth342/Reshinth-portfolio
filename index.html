@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reshinth M — Frontend Developer, Creative Designer, Bold Speaker &amp; Tech Enthusiast from Hindusthan Institute of Technology, Coimbatore." />
-  <title>Reshinth M • Frontend Developer, Creative Designer &amp; Bold Speaker</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300f2fe'/%3E%3Ctext x='50' y='68' font-family='Outfit,sans-serif' font-size='60' font-weight='900' text-anchor='middle' fill='%23070913'%3ER%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="Reshinth M — frontend developer and creative designer building thoughtful digital experiences in Coimbatore, India." />
+  <meta name="theme-color" content="#f4f3ef" />
+  <title>Reshinth M — Frontend, Design &amp; Ideas</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f3ef'/%3E%3Ctext x='50' y='70' font-family='Inter,sans-serif' font-size='68' font-weight='700' text-anchor='middle' fill='%2317191f'%3ER%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <!-- Three.js CDN for 3D WebGL Background & Hero Scene -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-<body class="page-loading">
+<body class="page-loading light-theme">
 
   <!-- BACKGROUND B: Real Portfolio Atmosphere (Evolving Depth & Ambient Light Field) -->
   <div class="light-field-bg" id="lightFieldBg" aria-hidden="true">
@@ -50,20 +51,25 @@
 
     <!-- Entrance Overlay Content & Trigger -->
     <div class="intro-content" id="introContent">
-      <p class="intro-eyebrow">THE WORLD IS OPENING</p>
+      <p class="intro-eyebrow">PERSONAL PORTFOLIO <span>/</span> COIMBATORE, INDIA</p>
       <h1 class="intro-headline">
-        <span class="accent-cyan">FRONTEND DEVELOPER</span> • <span class="accent-gold">CREATIVE DESIGNER</span> • <span class="accent-purple">BOLD SPEAKER</span>.
+        <span class="accent-cyan">RESHINTH</span>
+        <span class="accent-gold">M.</span>
       </h1>
-      <p class="intro-sub">Reshinth M • B.Tech IT Student • Hindusthan Institute of Technology (2023–2027)</p>
+      <p class="intro-sub">Frontend developer, creative designer, and B.Tech IT student.<br />Building useful things with a point of view.</p>
       <div class="intro-actions">
         <button class="intro-start-btn" id="introStartBtn" data-magnetic aria-label="Enter portfolio experience">
-          <span>ENTER PORTFOLIO EXPERIENCE</span>
+          <span>EXPLORE SELECTED WORK</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
       </div>
+    </div>
+    <div class="cover-art" aria-hidden="true">
+      <img src="images/hero-bg.png" alt="" />
+      <div class="cover-art-caption"><span>SELECTED WORK</span><span>2023 — 2026</span></div>
     </div>
     <div class="intro-grid-pattern"></div>
   </div>
@@ -109,7 +115,7 @@
           <span></span><span></span><span></span><span></span>
         </div>
       </button>
-      <button class="theme-toggle" id="themeToggle" data-magnetic aria-label="Toggle theme">Dark</button>
+      <button class="theme-toggle" id="themeToggle" data-magnetic aria-label="Toggle theme">Light</button>
       <button class="hamburger" id="hamburger" aria-label="Toggle mobile navigation">
         <span></span>
         <span></span>
